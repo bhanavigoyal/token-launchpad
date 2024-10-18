@@ -1,7 +1,8 @@
-export const InputBox=({heading, placeholder, type}:{
+export const InputBox=({heading, placeholder, type, onChange}:{
     heading: string,
     placeholder: string,
-    type: string
+    type: string,
+    onChange: (e:any)=>void
 })=>{
     return <div className="flex flex-col px-5 py-3">
         <div className="text-xs pb-1 flex">
@@ -9,6 +10,6 @@ export const InputBox=({heading, placeholder, type}:{
             <label >{heading}</label>
 
         </div>
-        <input type={type} placeholder={placeholder} className="outline-none p-2 text-xs bg-zinc-800 rounded-md border border-zinc-600 "/>
+        <input type={type} onChange={onChange} placeholder={placeholder} className="outline-none p-2 text-xs bg-zinc-800 rounded-md border border-zinc-600 "/>
     </div>
 }
